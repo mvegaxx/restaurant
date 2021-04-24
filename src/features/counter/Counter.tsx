@@ -14,7 +14,7 @@ import styles from './Counter.module.css'
 function Counter() {
   const dispatch = useAppDispatch()
   const count = useAppSelector(selectCount)
-  const [incrementAmount, setIncrementAmount] = useState('2')
+  const [incrementAmount, setIncrementAmount] = useState('0')
 
   const incrementValue = Number(incrementAmount) || 0
 
