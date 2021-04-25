@@ -1,12 +1,14 @@
 import Link from 'next/link'
-import Counter from '../features/counter/Counter'
+import Menu from '../components/menu/menu'
+import TableManager from '../components/tables/tablesManager'
 
 export default function Restaurant() {
   return (
     <>
       <Link href="/">inicio</Link>
-      <Counter />
-      <Counter />
+      <Link href="/counterExample">Counter example</Link>
+      <TableManager></TableManager>
+      <Menu/>
     </>
   )
 }

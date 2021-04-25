@@ -1,10 +1,18 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit'
 
 import counterReducer from '../features/counter/counterSlice'
+import tablesReducer from '../features/tables/tablesSlice'
+import menuReducer from '../features/menu/menuSlice'
+import ordersReducer from '../features/orders/ordersSlice'
 
 export function makeStore() {
   return configureStore({
-    reducer: { counter: counterReducer },
+    reducer: { 
+      counter: counterReducer,
+      tables: tablesReducer,
+      menu: menuReducer,
+      orders: ordersReducer,
+    },
   })
 }
 
