@@ -1,0 +1,113 @@
+
+.menuContainer{
+  display: flex;
+  justify-content: center;
+  color: #3f3f3f;
+  position: fixed;
+  width: 100%;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  align-items: center;
+  height: 100vh;
+}
+
+.menu {
+  position: absolute;
+  margin: auto;
+  top: 112px;
+  background-color: rgb(245, 228, 207);
+  border-radius: 10px;
+  border: 10px solid rgb(98, 54, 0);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 800px;
+  justify-content: center;
+  padding: 20px;
+  grid-gap: 20px 50px;
+
+}
+
+.title{
+  font-size: 30px;
+  grid-column: 1 / span 2;
+  text-align: center;
+  margin: 0;
+}
+
+.menuItem {
+  height: 50px;
+  justify-self: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.menuItem > h2 {
+  font-size: 25px;
+  margin:0;
+
+}
+
+.menuItem > h3 {
+  font-size: 15px;
+  margin:0;
+  flex: 1; 
+}
+
+.quantity {
+  position: relative;
+}
+
+.quantity input[type=number]::-webkit-inner-spin-button,
+.quantity input[type=number]::-webkit-outer-spin-button
+{
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+.quantity input {
+  width: 59px;
+  font-size: 25px;
+  background: whitesmoke;
+  color: rgb(37, 37, 37);
+  height: 42px;
+  line-height: 1.65;
+  padding-right: 10px;
+  display: block;
+  padding: 0;
+  margin: 0;
+  padding-left: 14px;
+  border: 1px solid #eee;
+}
+
+.quantity input:focus {
+  outline: 0;
+}
+
+.submitButton, .cancelButton{
+  padding: 10px 0px;
+  margin: 20px 0 -10px 0;
+  cursor: pointer;
+  text-align: center;
+  border: none;
+}
+.cancelButton{
+  background: transparent;
+
+}
+.submitButton{
+  background: #3f3f3f;
+}
+
+.submitButton:hover, .cancelButton:hover{
+  color: #ffffff;
+  text-decoration: none;
+  background: #3f3f3fa9;
+  cursor: pointer;
+  text-align: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}

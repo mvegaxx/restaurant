@@ -25,7 +25,7 @@ export const ordersSlice = createSlice({
   // The `reducers` field lets us define reducers and generate associated actions
   reducers: {
     addOrder: (state, action) => {
-      state.orderList[state.tableSelected].push(action.payload)
+      state.orderList[state.tableSelected] = action.payload
     },
     selectTable: (state, action) => {
       if(action.payload + 1 > state.orderList.length){

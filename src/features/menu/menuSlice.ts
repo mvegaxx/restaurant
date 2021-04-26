@@ -12,8 +12,18 @@ export type TFood = {
 
 
 const initialState: TFood[] = [
-  { name: "hamburguer", image: "🍔", prcie: "123", status: false },
-  { name: "pizza", image: "🍕", prcie: "222", status: true },
+  { name: "Hamburguesa", image: "🍔", prcie: "123", status: false },
+  { name: "Pizza", image: "🍕", prcie: "222", status: true },
+  { name: "Taco", image: "🌮", prcie: "222", status: true },
+  { name: "Hot dog", image: "🌭", prcie: "222", status: true },
+  { name: "Papas fritas", image: "🍟", prcie: "222", status: true },
+  { name: "Sandwich", image: "🥪", prcie: "222", status: true },
+  { name: "Ensalada", image: "🥗", prcie: "222", status: true },
+  { name: "Spageti", image: "🍝", prcie: "222", status: true },
+  { name: "Sushi", image: "🍣", prcie: "222", status: true },
+  { name: "Ramen", image: "🍜", prcie: "222", status: true },
+  { name: "Hotcakes", image: "🥞", prcie: "222", status: true },
+  { name: "Carne", image: "🍖", prcie: "222", status: true },
 ];
 
 export const menuSlice = createSlice({

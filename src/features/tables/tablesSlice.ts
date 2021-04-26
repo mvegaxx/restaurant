@@ -15,7 +15,7 @@ export interface TablesState {
 }
 
 const initialState: TablesState = {
-  count: 0,
+  count: 6,
   status: 'empty',
 }
 

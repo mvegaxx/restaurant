@@ -49,11 +49,18 @@
 .room {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  padding: 20px;
+  justify-items: center;
 }
 
 .table {
-  width: 40px;
-  height: 40px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
   background-color: brown;
+  cursor: pointer;
+  margin: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

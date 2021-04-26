@@ -11,7 +11,14 @@ function Tables() {
   const dispatch = useAppDispatch()
 
   for (let index = 0; index < count; index++) {
-    tables.push( <div key={index} className={styles.table} onClick={()=>dispatch(selectTable(index))}></div>)
+    tables.push( 
+      <div key={index}
+      className={styles.table}
+      onClick={()=>dispatch(selectTable(index))}
+      >
+        <p>{index + 1}</p>
+      </div>
+      )
     
   }
 

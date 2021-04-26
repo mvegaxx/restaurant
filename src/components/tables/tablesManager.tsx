@@ -12,7 +12,7 @@ function TableManager() {
   const count = useAppSelector(SelectTableCounter)
 
   return (
-    <div>
+    <>
       <div className={styles.row}>
         <button
           className={styles.button}
@@ -31,7 +31,7 @@ function TableManager() {
         </button>
       </div>
       <Tables />
-    </div>
+    </>
   )
 }
 
