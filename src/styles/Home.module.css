@@ -8,16 +8,54 @@
 }
 
 .header {
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 20px;
+  padding: 10px 30px; 
+  background-color: #008080;
+  color: whitesmoke;
 }
-
+.header a{
+  cursor: pointer;
+}
 .link {
   color: rgb(112, 76, 182);
+}
+
+.room{
+  height: calc(100vh - 39px);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  padding: 38px;
+  grid-template-areas:
+    "tables tables checkout checkout"
+    "tables tables kitchen kitchen"
+    "tables tables kitchen kitchen";
+}
+
+.tables, .kitchen, .checkout {
+  border: 5px solid #6e6e6e;
+}
+
+.tables { 
+  grid-area: tables; 
+  max-height: 100%;
+  overflow-y: auto;
+  border-right: 0;
+  background-color: rgb(255, 249, 242);
+  
+}
+.kitchen{
+  grid-area: kitchen; 
+  border-top: 0px solid #6e6e6e;
+  background-color: rgb(238, 238, 238);
+}
+.checkout {
+  grid-area: checkout;
+  border-bottom: 5px solid #6e6e6e;
+  background-color: rgb(156, 175, 103);
 }
 
 @media (prefers-reduced-motion: no-preference) {
