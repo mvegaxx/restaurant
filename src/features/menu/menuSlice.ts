@@ -2,29 +2,56 @@ import { createSlice } from "@reduxjs/toolkit";
 
 import type { AppState } from "../../app/store";
 
-export type TFood = {
+export type TFoodList = {
   name: string;
   image: string;
-  prcie: string;
+  price: number;
+  quantity: number;
   status: boolean;
 };
 
+export type TFood = {
+  Hamburguer: TFoodList;
+  Pizza: TFoodList;
+  Taco: TFoodList;
+  HotDog: TFoodList;
+  Fries: TFoodList;
+  Sandwich: TFoodList;
+  Salad: TFoodList;
+  Spageti: TFoodList;
+  Sushi: TFoodList;
+  Ramen: TFoodList;
+  Hotcakes: TFoodList;
+  Steak: TFoodList;
+};
 
-
-const initialState: TFood[] = [
-  { name: "Hamburguesa", image: "🍔", prcie: "123", status: false },
-  { name: "Pizza", image: "🍕", prcie: "222", status: true },
-  { name: "Taco", image: "🌮", prcie: "222", status: true },
-  { name: "Hot dog", image: "🌭", prcie: "222", status: true },
-  { name: "Papas fritas", image: "🍟", prcie: "222", status: true },
-  { name: "Sandwich", image: "🥪", prcie: "222", status: true },
-  { name: "Ensalada", image: "🥗", prcie: "222", status: true },
-  { name: "Spageti", image: "🍝", prcie: "222", status: true },
-  { name: "Sushi", image: "🍣", prcie: "222", status: true },
-  { name: "Ramen", image: "🍜", prcie: "222", status: true },
-  { name: "Hotcakes", image: "🥞", prcie: "222", status: true },
-  { name: "Carne", image: "🍖", prcie: "222", status: true },
+export const initialState: TFoodList[] = [
+  { name: "Hamburguesa", image: "🍔", price: 123, status: false, quantity:0 },
+  { name: "Pizza", image: "🍕", price: 222, status: true, quantity:0 },
+  { name: "Taco", image: "🌮", price: 222, status: true, quantity:0 },
+  { name: "Hot dog", image: "🌭", price: 222, status: true, quantity:0 },
+  { name: "Papas fritas", image: "🍟", price: 222, status: true, quantity:0 },
+  { name: "Sandwich", image: "🥪", price: 222, status: true, quantity:0 },
+  { name: "Ensalada", image: "🥗", price: 222, status: true, quantity:0 },
+  { name: "Spageti", image: "🍝", price: 222, status: true, quantity:0 },
+  { name: "Sushi", image: "🍣", price: 222, status: true, quantity:0 },
+  { name: "Ramen", image: "🍜", price: 222, status: true, quantity:0 },
+  { name: "Hotcakes", image: "🥞", price: 222, status: true, quantity:0 },
+  { name: "Carne", image: "🍖", price: 222, status: true, quantity:0 },
 ];
+//   Hamburguer: { name: "Hamburguesa", image: "🍔", price: 123, status: false, quantity:0 },
+//   Pizza: { name: "Pizza", image: "🍕", price: 222, status: true, quantity:0 },
+//   Taco: { name: "Taco", image: "🌮", price: 222, status: true, quantity:0 },
+//   HotDog: { name: "Hot dog", image: "🌭", price: 222, status: true, quantity:0 },
+//   Fries: { name: "Papas fritas", image: "🍟", price: 222, status: true, quantity:0 },
+//   Sandwich: { name: "Sandwich", image: "🥪", price: 222, status: true, quantity:0 },
+//   Salad: { name: "Ensalada", image: "🥗", price: 222, status: true, quantity:0 },
+//   Spageti: { name: "Spageti", image: "🍝", price: 222, status: true, quantity:0 },
+//   Sushi: { name: "Sushi", image: "🍣", price: 222, status: true, quantity:0 },
+//   Ramen: { name: "Ramen", image: "🍜", price: 222, status: true, quantity:0 },
+//   Hotcakes: { name: "Hotcakes", image: "🥞", price: 222, status: true, quantity:0 },
+//   Steak: { name: "Carne", image: "🍖", price: 222, status: true, quantity:0 },
+// };
 
 export const menuSlice = createSlice({
   name: "menu",

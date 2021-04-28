@@ -37,12 +37,12 @@
 
 .tables, .kitchen, .checkout {
   border: 5px solid #6e6e6e;
+  overflow-y: auto;
 }
 
 .tables { 
   grid-area: tables; 
   max-height: 100%;
-  overflow-y: auto;
   border-right: 0;
   background-color: rgb(255, 249, 242);
   
