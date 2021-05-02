@@ -1,0 +1,39 @@
+.noteContainer {
+  display: grid;
+  grid-gap: 10px;
+  padding: 10px;
+  grid-template-columns:repeat(auto-fill, minmax(140px, 1fr));
+  margin: auto;
+  place-items: center;
+}
+
+.note {
+  background: white;
+  padding: 20px 5px;
+  height: 160px;
+  width: 140px;
+  overflow-y: auto;
+  scrollbar-width: none;
+  border-radius: 10px;
+  border: 1px solid rgb(175, 175, 175);
+}
+
+.orderList{
+  display: grid;
+  grid-gap: 6px;
+  grid-template-columns: repeat(2, 1fr); 
+  
+}
+
+.note::-webkit-scrollbar {
+  display: none;
+}
+
+.noteTitle {
+  font-size: 13px;
+  margin: 0 0 10px 0;
+}
+
+.noteItems {
+
+}

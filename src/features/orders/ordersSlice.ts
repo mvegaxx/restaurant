@@ -1,53 +1,61 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { useAppSelector } from "../../app/hooks";
-
+import { compose, createSlice } from "@reduxjs/toolkit";
 import type { AppState } from "../../app/store";
-import type { TFood } from "../menu/menuSlice";
-import { SelectTableCounter } from "../tables/tablesSlice";
-import {initialState} from '../menu/menuSlice'
-type TOrders = {
-  orders: TFood[];
+import { initialState as Init } from "../menu/menuSlice";
+
+export type TFoodList = {
+  name: string;
+  image: string;
+  price: number;
+  quantity: number;
+  status: boolean;
 };
 
 export interface OrdersState {
   tableSelected: number;
-  orderList: TOrders[][];
+  menu: TFoodList[];
+  orderList: [];
 }
 
+const initialState: OrdersState = {
+  tableSelected: 0,
+  menu: Init,
+  orderList: [],
+};
 
 export const ordersSlice = createSlice({
   name: "orders",
   initialState,
-  // The `reducers` field lets us define reducers and generate associated actions
   reducers: {
-    // addOrder: (state, action) => {
-    //   state.orderList[state.tableSelected] = action.payload
-    // },
-    selectTable: (state, action) => {
-      // if(action.payload + 1 > state.orderList.length){
-      //   let comp = action.payload  - state.orderList.length + 1
-      //   let newArray = Array(comp).fill([])
-      //   state.orderList = state.orderList.concat(newArray)
-      //  }
-      // state.tableSelected = action.payload;
+    resetOrderList: (state) =>{
+      state.menu = Init
     },
-     addOrder: (state, action) => {
-      console.log(action.payload.nameItem)
-      console.log(action.payload.quantity)
-      state.find(( index ) => 
-      index.name == action.payload.nameItem 
-        ? 
-      )
-      
+    selectTable: (state, action) => {
+      state.tableSelected = action.payload;
+    },
+    setOrder: (state, action) => {
+      state.menu.filter((item) => {
+        action.payload.name == item.name
+          ? item.quantity = action.payload.quantity
+          : null;
+      });
+    },
+    addOrder: (state) => {
+      const orderIOtems = state.menu.filter((item) => {
+        
+        return item.quantity && item;
+      });
+      orderIOtems.length > 0 && state.orderList.push({
+        table: state.tableSelected,
+        order: orderIOtems,
+      });
+      state.menu = Init;
     },
   },
 });
 
-export const { addOrder, selectTable } = ordersSlice.actions;
+export const { addOrder, selectTable, setOrder, resetOrderList } = ordersSlice.actions;
 
-// The function below is called a selector and allows us to select a value from
-// the state. Selectors can also be defined inline where they're used instead of
-// in the slice file. For example: `useSelector((state: RootState) => state.orders.count)`
-export const SelectOrderCounter = (state: AppState) => state.orders;
+export const SelectOrderCounter = (state: AppState) => state.orders.orderList;
+export const SelectMenu = (state: AppState) => state.orders.menu;
 
 export default ordersSlice.reducer;

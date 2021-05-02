@@ -1,14 +1,15 @@
 import { useAppSelector } from '../../app/hooks'
 import { SelectOrderCounter } from '../../features/orders/ordersSlice'
 import OrderNote from '../orders/orderNote'
+import styles from '../orders/order.module.css'
 
 export default function Kitchen() {
   const orders = useAppSelector(SelectOrderCounter)
 
   return (
-  <div>
+  <div  className={styles.noteContainer}>
     {orders.map((order, index)=>{
-       return order.length > 0 && <OrderNote key={index} order={order}/>
+       return <OrderNote key={index} order={order}/>
     })}
   </div>
   )
